@@ -1,4 +1,4 @@
-#include "RandomNumberGenerator.hpp"
+#include "./RandomNumberGenerator.hpp"
 
 RandomNumberGenerator::RandomNumberGenerator() {
     std::random_device rd;

@@ -1,7 +1,8 @@
-#include "HealthParameterStub.hpp"
+#include "./HealthParameterStub.hpp"
 
-HealthParameterStub::HealthParameterStub( std::shared_ptr<RandomNumberGenerator> _pRandomNumberGenerator ) :
-    m_pRandomNumberGenerator(_pRandomNumberGenerator) {
+HealthParameterStub::HealthParameterStub(std::shared_ptr<RandomNumberGenerator>
+                                         _pRandomNumberGenerator) :
+                                        m_pRandomNumberGenerator(_pRandomNumberGenerator) {
 }
 
 double HealthParameterStub::getTemperatureInFarenheit() {
