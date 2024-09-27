@@ -1,10 +1,10 @@
 #pragma once
-#include "RandomNumberGenerator.hpp"
 #include <memory>
+#include "./RandomNumberGenerator.hpp"
 
 class HealthParameterStub {
     public:
-        HealthParameterStub(std::shared_ptr<RandomNumberGenerator>);
+        explicit HealthParameterStub(std::shared_ptr<RandomNumberGenerator>);
         double getTemperatureInFarenheit();
         int getPulseRateInBPM();
         int getSpo2InPercentage();

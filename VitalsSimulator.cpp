@@ -1,8 +1,8 @@
-#include "./HealthParameterStub.hpp"
-#include "./Formater.hpp"
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "./HealthParameterStub.hpp"
+#include "./Formater.hpp"
 
 int main() {
     auto pRandomNumberGenerator = std::make_shared<RandomNumberGenerator>();
