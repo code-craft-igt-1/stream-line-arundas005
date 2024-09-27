@@ -34,9 +34,9 @@ TEST_F(HealthParameterStubTest, TestSPO2Sensor) {
 
 TEST_F(HealthParameterStubTest, TestDisplayTextFormat) {
     std::string formattedOutput = formatSensorOutput(97.0, 70, 95);
-    std::string expectedOutput = 
+    std::string expectedOutput =
         "{\"Temperature\": {\"value\": 97.0, \"unit\": \"F\"}, "
         "\"PulseRate\": {\"value\": 70, \"unit\": \"bpm\"}, "
         "\"Spo2\": {\"value\": 95, \"unit\": \"%\"}}";
-    EXPECT_TRUE(expectedOutput.compare(formattedOutput) == 0);
+    EXPECT_EQ(expectedOutput.compare(formattedOutput),  0);
 }
