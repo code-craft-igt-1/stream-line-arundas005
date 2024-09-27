@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <memory>
 #include "./HealthParameterStub.hpp"
+#include "./Formater.hpp"
 
 class HealthParameterStubTest : public ::testing::Test {
  protected:
@@ -29,4 +30,13 @@ TEST_F(HealthParameterStubTest, TestPulseRateSensor) {
 TEST_F(HealthParameterStubTest, TestSPO2Sensor) {
     int spo2 = healthParameterStub->getSpo2InPercentage();
     EXPECT_TRUE(90 <= spo2 && 100 >= spo2);
+}
+
+TEST_F(HealthParameterStubTest, TestDisplayTextFormat) {
+    std::string formattedOutput = formatSensorOutput(97.0, 70, 95);
+    std::string expectedOutput = 
+        "{\"Temperature\": {\"value\": 97.0, \"unit\": \"F\"}, "
+        "\"PulseRate\": {\"value\": 70, \"unit\": \"bpm\"}, "
+        "\"Spo2\": {\"value\": 95, \"unit\": \"%\"}}";
+    EXPECT_TRUE(expectedOutput.compare(formattedOutput) == 0);
 }
