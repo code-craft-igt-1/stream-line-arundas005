@@ -4,16 +4,16 @@
 #include "./HealthParameterStub.hpp"
 
 class HealthParameterStubTest : public ::testing::Test {
-    protected:
-        std::unique_ptr<HealthParameterStub> healthParameterStub;
-        void SetUp() override {
-            auto pRandomNumberGenerator = std::make_shared<RandomNumberGenerator>();
-            healthParameterStub = std::make_unique<HealthParameterStub>(pRandomNumberGenerator);
-        }
+ protected:
+    std::unique_ptr<HealthParameterStub> healthParameterStub;
+    void SetUp() override {
+        auto pRandomNumberGenerator = std::make_shared<RandomNumberGenerator>();
+        healthParameterStub = std::make_unique<HealthParameterStub>(pRandomNumberGenerator);
+    }
 
-        void TearDown() override {
-            // Clean up any necessary data here
-        }
+    void TearDown() override {
+        // Clean up any necessary data here
+    }
 };
 
 TEST_F(HealthParameterStubTest, TestTemperatureSensor) {
