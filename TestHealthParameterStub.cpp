@@ -16,12 +16,17 @@ class HealthParameterStubTest : public ::testing::Test {
         }
 };
 
-TEST_F(HealthParameterStubTest, TestVitalsSimulator) {
-    // Assuming HealthParameterStub has some default values to check
+TEST_F(HealthParameterStubTest, TestTemperatureSensor) {
     double temperature = healthParameterStub->getTemperatureInFarenheit();
-    int pulseRate = healthParameterStub->getPulseRateInBPM();
-    int spo2 = healthParameterStub->getSpo2InPercentage();
     EXPECT_TRUE(95.0 <= temperature &&  105.0 >= temperature);
+}
+
+TEST_F(HealthParameterStubTest, TestPulseRateSensor) {
+    int pulseRate = healthParameterStub->getPulseRateInBPM();
     EXPECT_TRUE(60 <= pulseRate && 140 >= pulseRate);
+}
+
+TEST_F(HealthParameterStubTest, TestSPO2Sensor) {
+    int spo2 = healthParameterStub->getSpo2InPercentage();
     EXPECT_TRUE(90 <= spo2 && 100 >= spo2);
 }
