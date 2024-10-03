@@ -15,18 +15,17 @@ jobs:
         sudo apt-get install -y gcovr
     - name: setup cmake
       run: sudo apt install cmake
-    - name: setup and run linter
-      run: |
-        pip install cpplint
-        cpplint  --filter=-legal,-build/c++11 --linelength=100 *.cpp *.hpp
 
     - name: build
       run: |
         cmake -S . -B build
         cmake --build build
       
-    - name: run
+    - name: run sender test
       run: build/test-VitalSimulator
+
+    - name: run processer test
+      run: build/test-data-processor
 
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary

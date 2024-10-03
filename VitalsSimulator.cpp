@@ -12,7 +12,7 @@ int main() {
         std::cout << formatSensorOutput(healthParameterStub.getTemperatureInFarenheit(),
                    healthParameterStub.getPulseRateInBPM(),
                    healthParameterStub.getSpo2InPercentage()) << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(5));
+        // std::this_thread::sleep_for(std::chrono::seconds(5));
     }
     return 0;
 }

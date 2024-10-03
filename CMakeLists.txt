@@ -31,6 +31,11 @@ add_library(
 )
 
 add_executable(
+  data_processor
+  data_processor.cpp
+)
+
+add_executable(
   VitalSimulator
   VitalsSimulator.cpp
 )
@@ -38,6 +43,11 @@ add_executable(
 add_executable(
   test-VitalSimulator
   TestHealthParameterStub.cpp
+)
+add_executable(
+  test-data-processor
+  data_processor.cpp
+  test_data_processor.cpp
 )
 
 
@@ -51,6 +61,11 @@ target_link_libraries(
   GTest::gtest_main
   VitalSimulatorlib
 )
+target_link_libraries(
+  test-data-processor
+  GTest::gtest_main 
+)
 
 include(GoogleTest)
 gtest_discover_tests(test-VitalSimulator)
+gtest_discover_tests(test-data-processor)
